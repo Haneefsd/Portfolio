@@ -1,0 +1,129 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', Times, serif;
+  background: radial-gradient(circle at top left, #2a1b3d, #a4307e, #000, #44318d, #1d1669, #000);
+  color: #f5e6e8;
+  height: 100vh;
+}
+
+.app-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: rgb(255, 255, 255); /* Soft lavender glow */
+  filter: blur(1px);
+  border-radius: 50%;
+  top: -100px;
+  right: -100px;
+  z-index: 0;
+  animation: pulse 4s infinite ease-in-out; /* Added pulsing effect */
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  background-color: #1f1a2e; /* Darker purple base */
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px, rgb(89, 146, 211); /* Coral shadow */
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  border: 2px solid;
+  border-image: linear-gradient(45deg, #ff6f61, #d4a5ff) 1; /* Gradient border */
+  background-clip: padding-box;
+}
+
+.neon-title {
+  font-size: 2rem;
+  color: #ff6f61; /* Bright coral */
+  text-shadow: 0 0 12px rgba(255, 111, 97, 0.7);
+  margin-bottom: 2rem;
+}
+
+.neon-input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  background: #2a1b3d; /* Deep purple */
+  color: #e8e6f5; /* Off-white text */
+  outline: none;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 0 0px rgba(212, 165, 255, 0.5); /* Lavender shadow */
+}
+
+.neon-input:focus {
+  box-shadow: 0 0 12px rgba(212, 165, 255, 0.8); /* Brighter lavender glow */
+}
+
+.neon-button {
+  background-color: #ff6f61; /* Coral */
+  color: #1f1a2e; /* Dark purple text */
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.neon-button:hover {
+  background-color: #ff8a7a; /* Lighter coral */
+  box-shadow: 0 0 12px rgba(255, 111, 97, 0.7); /* Glow on hover */
+}
+
+.neon-button:disabled {
+  background-color: #4a2e6b; /* Muted purple */
+  color: #a490b5; /* Faded lavender */
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.answer-box {
+  background-color: #4a2e6b; /* Darker purple */
+  color: #f5e6e8; /* Off-white text */
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(212, 165, 255, 0.4); /* Lavender shadow */
+  text-align: left;
+}
+
+.answer-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #d4a5ff; /* Lavender */
+}
+
+.error-text {
+  color: #ff4d4d; /* Red for errors */
+  margin-top: 1rem;
+}
+
+/* Pulsing animation for background glow */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.25;
+  }
+}
